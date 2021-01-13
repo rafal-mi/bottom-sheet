@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
@@ -67,6 +68,13 @@ class MainActivity : AppCompatActivity() {
             override fun onSlide(view: View, v: Float) {}
         })
 
+        val btn_bottom_sheet_dialog = findViewById<Button>(R.id.btn_bottom_sheet_dialog)
+        btn_bottom_sheet_dialog.setOnClickListener {
+            val dialogView = layoutInflater.inflate(R.layout.bottom_sheet, null)
+            val dialog = BottomSheetDialog(this)
+            dialog.setContentView(dialogView)
+            dialog.show()
+        }
 
         val btn_bottom_sheet_dialog_fragment = findViewById<Button>(R.id.btn_bottom_sheet_dialog_fragment)
         btn_bottom_sheet_dialog_fragment.setOnClickListener {

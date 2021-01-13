@@ -29,7 +29,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:text="Show Bottom Sheet Dialog"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/btn_bottom_sheet_dialog_fragment"
@@ -38,6 +38,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:text="Show Bottom Sheet Dialog Fragment"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 </LinearLayout>

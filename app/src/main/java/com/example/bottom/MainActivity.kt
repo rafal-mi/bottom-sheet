@@ -34,11 +34,11 @@ class MainActivity : AppCompatActivity() {
         val btn_bottom_sheet = findViewById<Button>(R.id.btn_bottom_sheet)
         btn_bottom_sheet.setOnClickListener {
             val behavior = sheetBehavior as BottomSheetBehavior
-            if (behavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+            if (behavior.state != BottomSheetBehavior.STATE_EXPANDED) {
+                behavior.state = BottomSheetBehavior.STATE_EXPANDED
                 btn_bottom_sheet.text = "Close sheet"
             } else {
-                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+                behavior.state = BottomSheetBehavior.STATE_COLLAPSED
                 btn_bottom_sheet.text = "Expand sheet"
             }
         }
@@ -58,11 +58,22 @@ class MainActivity : AppCompatActivity() {
                     }
                     BottomSheetBehavior.STATE_SETTLING -> {
                     }
+                    BottomSheetBehavior.STATE_HALF_EXPANDED -> {
+                        TODO()
+                    }
                 }
             }
 
             override fun onSlide(view: View, v: Float) {}
         })
+
+
+        val btn_bottom_sheet_dialog_fragment = findViewById<Button>(R.id.btn_bottom_sheet_dialog_fragment)
+        btn_bottom_sheet_dialog_fragment.setOnClickListener {
+            val bottomSheetFragment = BottomSheetFragment()
+            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
+
+        }
 
     }
 

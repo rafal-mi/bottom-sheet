@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bottom_sheet = findViewById(R.id.bottom_sheet);
-        sheetBehavior = BottomSheetBehavior.from(bottom_sheet as LinearLayout);
+//        sheetBehavior = BottomSheetBehavior.from(bottom_sheet as LinearLayout);
 
         val btn_bottom_sheet = findViewById<Button>(R.id.btn_bottom_sheet)
         btn_bottom_sheet.setOnClickListener {
@@ -44,29 +44,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        (sheetBehavior as BottomSheetBehavior<*>).addBottomSheetCallback(object : BottomSheetCallback() {
-            override fun onStateChanged(view: View, newState: Int) {
-                when (newState) {
-                    BottomSheetBehavior.STATE_HIDDEN -> {
-                    }
-                    BottomSheetBehavior.STATE_EXPANDED -> {
-                        btn_bottom_sheet.text = "Close Sheet"
-                    }
-                    BottomSheetBehavior.STATE_COLLAPSED -> {
-                        btn_bottom_sheet.text = "Expand Sheet"
-                    }
-                    BottomSheetBehavior.STATE_DRAGGING -> {
-                    }
-                    BottomSheetBehavior.STATE_SETTLING -> {
-                    }
-                    BottomSheetBehavior.STATE_HALF_EXPANDED -> {
-                        TODO()
-                    }
-                }
-            }
-
-            override fun onSlide(view: View, v: Float) {}
-        })
+//        (sheetBehavior as BottomSheetBehavior<*>).addBottomSheetCallback(object : BottomSheetCallback() {
+//            override fun onStateChanged(view: View, newState: Int) {
+//                when (newState) {
+//                    BottomSheetBehavior.STATE_HIDDEN -> {
+//                    }
+//                    BottomSheetBehavior.STATE_EXPANDED -> {
+//                        btn_bottom_sheet.text = "Close Sheet"
+//                    }
+//                    BottomSheetBehavior.STATE_COLLAPSED -> {
+//                        btn_bottom_sheet.text = "Expand Sheet"
+//                    }
+//                    BottomSheetBehavior.STATE_DRAGGING -> {
+//                    }
+//                    BottomSheetBehavior.STATE_SETTLING -> {
+//                    }
+//                    BottomSheetBehavior.STATE_HALF_EXPANDED -> {
+//                        TODO()
+//                    }
+//                }
+//            }
+//
+//            override fun onSlide(view: View, v: Float) {}
+//        })
 
         val btn_bottom_sheet_dialog = findViewById<Button>(R.id.btn_bottom_sheet_dialog)
         btn_bottom_sheet_dialog.setOnClickListener {
